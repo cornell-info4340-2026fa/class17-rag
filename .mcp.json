@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "vue-docs": {
+      "type": "http",
+      "url": "https://mcp.vue-mcp.org/mcp"
+    },
+    "daisyUI": {
+      "type": "sse",
+      "url": "https://gitmcp.io/saadeghi/daisyui"
+    }
+  }
+}

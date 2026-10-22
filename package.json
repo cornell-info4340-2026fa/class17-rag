@@ -1,0 +1,36 @@
+{
+  "name": "info4340-hw5",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "cross-env DEPLOY=github vite build",
+    "preview": "vite preview",
+    "publish-pwa": "gh-pages -t -d dist"
+  },
+  "dependencies": {
+    "@langchain/core": "^1.2.20",
+    "@langchain/textsplitters": "^1.0.2",
+    "@mlc-ai/web-llm": "^0.2.86",
+    "@orama/orama": "^3.1.18",
+    "@orama/stopwords": "^3.1.18",
+    "@phosphor-icons/vue": "^2.2.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "daisyui": "^5.7.50",
+    "vue": "^3.5.44"
+  },
+  "devDependencies": {
+    "@vite-pwa/assets-generator": "^2.0.0",
+    "@vitejs/plugin-vue": "^6.0.10",
+    "cross-env": "^10.1.0",
+    "gh-pages": "^6.3.0",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.5",
+    "vite-plugin-pwa": "^2.0.0",
+    "vite-plugin-vue-devtools": "^8.2.1"
+  }
+}

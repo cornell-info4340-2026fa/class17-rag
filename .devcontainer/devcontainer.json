@@ -1,0 +1,181 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
+{
+	"name": "Vite + Vue.js",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:24",
+
+	// Run on host before container starts - generates unique project name from folder path
+	"initializeCommand": "bash -c 'echo COMPOSE_PROJECT_NAME=$(pwd | sed \"s|/|_|g\" | sed \"s|^_||\" | tr \"A-Z\" \"a-z\" | sed \"s|[^a-z0-9_-]||g\") > .devcontainer/.env'",
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/devcontainers/features/github-cli:1": { }
+	},
+
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to Codespaces
+		"codespaces": {
+			"openFiles": [
+				"README.md"
+			]
+		},
+		// Configure properties specific to VS Code.
+		"vscode": {
+			"settings": {
+				"[css]": {
+					"editor.defaultFormatter": "vscode.css-language-features"
+				},
+				"[html]": {
+					"editor.defaultFormatter": "vscode.html-language-features"
+				},
+				"[javascript][javascriptreact]": {
+					"editor.defaultFormatter": "vscode.typescript-language-features"
+				},
+				"[vue]": {
+					"editor.defaultFormatter": "Vue.volar"
+				},
+				"breadcrumbs.enabled": true,
+				"css.validate": false,
+				"debug.console.collapseIdenticalLines": false,
+				"debug.console.wordWrap": true,
+				"debug.internalConsoleOptions": "openOnSessionStart",
+				"debug.openDebug": "openOnDebugBreak",
+				"debug.openExplorerOnEnd": true,
+				"editor.formatOnSave": true,
+				"editor.minimap.maxColumn": 80,
+				"editor.minimap.showSlider": "always",
+				"editor.stickyScroll.enabled": true,
+				"editor.tabCompletion": "on",
+				"editor.wordWrap": "on",
+				"eslint.workingDirectories": [
+					{
+						"mode": "auto"
+					}
+				],
+				"explorer.compactFolders": false,
+				"explorer.fileNesting.enabled": true,
+				"explorer.fileNesting.patterns": {
+					"tsconfig.json": "tsconfig.*.json, env.d.ts",
+					"vite.config.*": "jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*",
+					"package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, .eslint*, eslint*, .oxlint*, oxlint*, .prettier*, prettier*, .editorconfig"
+				},
+				"files.exclude": {
+					".devcontainer": true,
+					".git": true,
+					".gitattributes": true,
+					"**/.gitignore": true,
+					"**/.keep": true
+				},
+				"files.insertFinalNewline": true,
+				"files.trimFinalNewlines": true,
+				"files.trimTrailingWhitespace": true,
+				"git.autofetch": true,
+				"github.copilot.enable": {
+					"*": true
+				},
+				"html.autoClosingTags": false,
+				"html.format.wrapLineLength": 0,
+				"json.format.keepLines": true,
+				"markdownlint.config": {
+					"MD012": false,
+					"MD013": false,
+					"MD022": false,
+					"MD025": false,
+					"MD033": false,
+					"MD036": false,
+					"MD037": false,
+					"MD040": false
+				},
+				"mdb.confirmRunAll": false,
+				"mdb.defaultLimit": 100,
+				"mdb.mcp.server": "autoStartEnabled",
+				"mdb.presetConnections": [
+					{
+						"connectionString": "mongodb://localhost:27017",
+						"name": "mongodb"
+					}
+				],
+				"mdb.sendTelemetry": false,
+				"mdb.showMongoDBHelpExplorer": false,
+				"mdb.showMongoDBPlaygrounds": false,
+				"mdb.showOverviewPageAfterInstall": false,
+				"mdb.useDefaultTemplateForPlayground": false,
+				"notebook.experimental.generate": false,
+				"npm.enableRunFromFolder": true,
+				"todohighlight.enableDiagnostics": true,
+				"todohighlight.include": [
+					"**/*.js",
+					"**/*.jsx",
+					"**/*.ts",
+					"**/*.tsx",
+					"**/*.html",
+					"**/*.css",
+					"**/*.scss",
+					"**/*.php",
+					"**/*.rb",
+					"**/*.txt",
+					"**/*.mdown",
+					"**/*.md",
+					"**/*.mjs",
+					"**/*.cjs"
+				],
+				"webvalidator.showInfo": false,
+				"webvalidator.showWarning": false,
+				"webvalidator.validateOnSave": false,
+				"webvalidator.validationNotification": false,
+				"workbench.activityBar.visible": true,
+				"workbench.editor.highlightModifiedTabs": true,
+				"workbench.editor.wrapTabs": true,
+				"workbench.localHistory.maxFileEntries": 200,
+				"workbench.localHistory.maxFileSize": 1024,
+				"workbench.tree.indent": 18
+			},
+			"extensions": [
+				"analytic-signal.preview-pdf",
+				"Anthropic.claude-code",
+				"anweber.httpbook",
+				"anweber.vscode-httpyac",
+				"bierner.markdown-checkbox",
+				"celianriboulet.webvalidator",
+				"davidanson.vscode-markdownlint",
+				"ecmel.vscode-html-css",
+				"hassansaadfr.port-cleaner",
+				"jgclark.vscode-todo-highlight",
+				"kisstkondoros.vscode-gutter-preview",
+				"mushan.vscode-paste-image",
+				"pucelle.vscode-css-navigation",
+				"sndst00m.vscode-native-svg-preview",
+				"vue.volar",
+				"yzhang.markdown-all-in-one"
+			]
+		}
+	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [ 5173 ],
+	"portsAttributes": {
+		"5173": {
+			"label": "client",
+			"onAutoForward": "openBrowser"
+		}
+	},
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"waitFor": "onCreateCommand",
+	"postCreateCommand": {
+		"installPackages": "npm install"
+	},
+	"postStartCommand": {
+		"gitPull": "git config --global pull.rebase false",
+		"clientPort": "gh codespace ports visibility 5173:public -c \"$CODESPACE_NAME\""
+	},
+	"postAttachCommand": "echo \">>> Codespace is ready! <<<\"",
+
+	// Support port forwarding.
+	// "runArgs": [ "--sysctl", "net.ipv6.conf.all.disable_ipv6=1" ],
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
